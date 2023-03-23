@@ -5,7 +5,6 @@ import java.util.LinkedList;
 public class SOR {
 
     private LinkedList<Patient> queue;
-    private int size = 0;
     public SOR() {
         queue = new LinkedList<>();
     }
@@ -24,16 +23,14 @@ public class SOR {
             }
             queue.addLast(patient);
         }
-        size ++;
     }
 
     public Patient getNextPatient() {
-        size --;
         return queue.poll();
     }
 
     public int getSize() {
-        return size;
+        return queue.size();
     }
 
     public String toString() {

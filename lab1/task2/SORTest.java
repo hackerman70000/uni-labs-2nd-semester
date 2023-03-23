@@ -1,7 +1,8 @@
 package task2;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class SORTest {
@@ -14,6 +15,7 @@ public class SORTest {
         assertEquals("Emilia - priority: 2\n", queue.toString());
 
     }
+
     @Test
     public void testInvalidPriority() {
         SOR queue = new SOR();
@@ -40,6 +42,29 @@ public class SORTest {
         assertEquals(Anna, queue.getNextPatient());
         assertEquals(Basia, queue.getNextPatient());
         assertNull(queue.getNextPatient());
+    }
+
+    @Test
+    public void testGetSize() {
+        SOR queue = new SOR();
+
+        Patient Anna = new Patient("Anna", 2);
+        Patient Janusz = new Patient("Bob", 1);
+        Patient Basia = new Patient("Charlie", 3);
+
+        queue.addPatient(Anna);
+        queue.addPatient(Janusz);
+        queue.addPatient(Basia);
+
+        assertEquals(3, queue.getSize());
+        queue.getNextPatient();
+        assertEquals(2, queue.getSize());
+        queue.getNextPatient();
+        assertEquals(1, queue.getSize());
+        queue.getNextPatient();
+        assertEquals(0, queue.getSize());
+        queue.getNextPatient();
+        assertEquals(0, queue.getSize());
     }
 }
 
