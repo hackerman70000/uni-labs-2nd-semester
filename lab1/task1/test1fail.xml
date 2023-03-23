@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO8859-1" ?>
 <CATALOG>
   <CD>
     <TITLE>Empire Burlesque</TITLE>
     <ARTIST>Bob Dylan</ARTIST>
     <COUNTRY>USA</COUNTRY>
-    <COMPANY>Columbia<COdMPANY>  //error
-    <PRICE>10.90</PRICE>
-    <YEAR>1985 </YEaaaR> //error
+    <COMPANY>Columbia</COMPANY>
+    <PRICE>10.90</YEAR> <!-- no opening YEAR -->
+    <YEAR>1985</YEAR>
   </CD>
   <CD>
     <TITLE>Hide your heart</TITLE>
-    <ARTIST>Bonnie Tyler //error
+    <ARTIST>Bonnie Tylor</ARTIST>
     <COUNTRY>UK</COUNTRY>
     <COMPANY>CBS Records</COMPANY>
     <PRICE>9.90</PRICE>
-    <YEAR>1988</YEAR>
+    <YEAR>1988</YER> <!-- typo, no opening YER -->
   </CD>
-  <CD>
+  <CDf> <!-- typo, no closing CDf -->
     <TITLE>Greatest Hits</TITLE>
     <ARTIST>Dolly Parton</ARTIST>
     <COUNTRY>USA</COUNTRY>
@@ -26,12 +26,13 @@
   </CD>
   <CD>
     <TITLE>Still got the blues</TITLE>
-    <ARTIST>Gary Moore</ARTIST>
+    <ARTIST>Gary More</ARTIST>
     <COUNTRY>UK</COUNTRY>
-    <COMPANY>Virgin records</COMPANY>
-    <PRICE>10.20</PRICE>
+    <COMPANY>Virgin redords</COMPANY>
+    <PRICE>10.20
     <YEAR>1990</YEAR>
   </CD>
+  </PRICE> <!-- PRICE closed too late -->
   <CD>
     <TITLE>Eros</TITLE>
     <ARTIST>Eros Ramazzotti</ARTIST>
@@ -146,7 +147,7 @@
   </CD>
   <CD>
     <TITLE>Bridge of Spies</TITLE>
-    <ARTIST>T'Pau</ARTIST>
+    <ARTIST>T`Pau</ARTIST>
     <COUNTRY>UK</COUNTRY>
     <COMPANY>Siren</COMPANY>
     <PRICE>7.90</PRICE>
@@ -180,9 +181,9 @@
     <TITLE>The dock of the bay</TITLE>
     <ARTIST>Otis Redding</ARTIST>
     <COUNTRY>USA</COUNTRY>
-    <COMPANY>Stax Records</COMPANY>
+    <COMPANY>Atlantic</COMPANY>
     <PRICE>7.90</PRICE>
-    <YEAR>1968</YEAR>
+    <YEAR>1987</YEAR>
   </CD>
   <CD>
     <TITLE>Picture book</TITLE>

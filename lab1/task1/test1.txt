@@ -1,9 +1,4 @@
-count=8
-e1=CATALOG
-e2=CD
-e3=TITLE
-e4=ARTIST
-e5=COUNTRY
-e6=COMPANY
-e7=PRICE
-e8=YEAR
+count=3
+e1=YEAR
+e2=PRICE
+e3=CD

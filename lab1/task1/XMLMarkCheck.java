@@ -13,9 +13,9 @@ public class XMLMarkCheck {
 
         try {
             // Example file downloaded from https://www.w3schools.com/xml/xml_examples.asp
-            properties.load(new FileReader("test1.txt"));
+            properties.load(new FileReader("/home/bartelemy/Documents/APRO2/lab1/task1/test1.txt"));  //your path to file (depends on your run config)
 
-            Scanner scanner = new Scanner(new File("test1fail.xml"));
+            Scanner scanner = new Scanner(new File("/home/bartelemy/Documents/APRO2/lab1/task1/test1fail.xml")); //your path to file (depends on your run config)
             scanner.nextLine();
 
             String line;
