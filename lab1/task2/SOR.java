@@ -1,10 +1,12 @@
 package task2;
 
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class SOR {
 
     private LinkedList<Patient> queue;
+
     public SOR() {
         queue = new LinkedList<>();
     }
@@ -15,7 +17,7 @@ public class SOR {
         } else {
             int index = 0;
             for (Patient p : queue) {
-                if (patient.compareTo(p) <= 0) {
+                if (patient.compareTo(p) < 0) {
                     queue.add(index, patient);
                     return;
                 }
