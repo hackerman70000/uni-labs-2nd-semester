@@ -10,12 +10,25 @@ public class XMLMarkCheck {
 
         Stack<String> markStack = new Stack<>();
         Properties properties = new Properties();
+        HashSet<String> checkedTags = new HashSet<>();
+
 
         try {
-            // Example file downloaded from https://www.w3schools.com/xml/xml_examples.asp
-            properties.load(new FileReader("/home/bartelemy/Documents/APRO2/lab1/task1/test1.txt"));  //your path to file (depends on your run config)
 
-            Scanner scanner = new Scanner(new File("/home/bartelemy/Documents/APRO2/lab1/task1/test1fail.xml")); //your path to file (depends on your run config)
+            try (InputStream configurationFile = new FileInputStream("/home/bartelemy/Documents/APRO2/lab1/task1/test1.txt")) {  //your path to file
+
+                properties.load(configurationFile);
+                checkedTags = new HashSet<>();
+                final int count = Integer.parseInt(properties.getProperty("count"));
+
+                for (int i = 1; i <= count; i++) {
+                    checkedTags.add(properties.getProperty("e" + Integer.toString(i)));
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            Scanner scanner = new Scanner(new File("/home/bartelemy/Documents/APRO2/lab1/task1/test1fail.xml")); //your path to file
             scanner.nextLine();
 
             String line;
@@ -28,7 +41,6 @@ public class XMLMarkCheck {
 
                 line = scanner.nextLine();
                 String mark = "";
-
 
                 for (int i = 0; i < line.length(); i++) {
 
@@ -49,7 +61,7 @@ public class XMLMarkCheck {
 
                         if (mark.contains("/")) {
                             mark = mark.replace("/", "");
-                            if (!properties.contains(mark))
+                            if (!checkedTags.contains(mark))
                                 break;
                             if (mark.equals(markStack.peek())) {
                                 markStack.pop();
@@ -62,12 +74,10 @@ public class XMLMarkCheck {
 
                     }
 
-
                     if (ifMark && line.charAt(i + 1) != '>') {
                         mark += line.charAt(i + 1);
                     }
                 }
-
                 lineCount++;
             }
 
