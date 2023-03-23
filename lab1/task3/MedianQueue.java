@@ -1,4 +1,4 @@
-package uk.blizni.jakub.lab1;
+package task3;
 
 import java.util.Comparator;
 import java.util.Optional;

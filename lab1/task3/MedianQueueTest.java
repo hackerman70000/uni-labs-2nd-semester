@@ -1,4 +1,4 @@
-package uk.blizni.jakub.lab1;
+package task3;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
