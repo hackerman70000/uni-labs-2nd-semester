@@ -7,8 +7,8 @@ import java.util.LinkedHashMap;
 
 public class LRUCache<K, V> {
 
-    private int capacity;
     LinkedHashMap cache = new LinkedHashMap(0, 0.75f, true);
+    private int capacity;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
@@ -35,12 +35,11 @@ public class LRUCache<K, V> {
     }
 
     public int getCapacity() {
+        capacity = cache.size();
         return capacity;
     }
 
-
     public void setCapacity(int capacity) {
-        this.capacity = capacity;
         LinkedHashMap<K, V> newCache = new LinkedHashMap<>(capacity, 0.75f, true);
         // Remove the oldest elements if the new capacity is smaller than the old one
         if (cache.size() > capacity) {
@@ -50,6 +49,8 @@ public class LRUCache<K, V> {
                 iterator.remove();
             }
         }
+        this.capacity = capacity;
+
         newCache.putAll(cache);
         cache = newCache;
     }

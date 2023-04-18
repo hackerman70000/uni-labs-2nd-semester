@@ -28,6 +28,20 @@ public class LRUCacheTest {
     }
 
     @Test
+    public void testGetCapacity() {
+        LRUCache<Integer, String> cache = new LRUCache<>(2);
+        cache.put(1, "apple");
+        cache.put(2, "banana");
+        cache.put(3, "orange");
+        cache.put(4, "grape");
+        assertEquals(cache.getCapacity(), 2);
+        cache.setCapacity(1);
+        cache.put(4, "grape");
+        assertEquals(cache.getCapacity(), 1);
+
+    }
+
+    @Test
     public void testLRU() throws Exception {
         LRUCache<Integer, String> cache = new LRUCache<>(2);
         cache.put(1, "apple");
