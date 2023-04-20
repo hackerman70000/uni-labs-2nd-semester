@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
-public class Main {
+public class PathFinder {
     public static void main(String[] args) {
 
         int[][] pixels = {
@@ -23,7 +23,7 @@ public class Main {
         Map<Integer, ArrayList<Integer>> graph = GraphGenerator(pixels);
 
         printGraph(graph);
-        findpaths(graph, 0, 24, 16);
+        findPath(graph, 0, 24, 16);
 
     }
 
@@ -144,7 +144,7 @@ public class Main {
         return matrix;
     }
 
-    static List<Integer> findpaths(Map<Integer, ArrayList<Integer>> map, int src, int dst, int v) {
+    public static List<Integer> findPath(Map<Integer, ArrayList<Integer>> map, int src, int dst, int v) {
         Queue<List<Integer>> queue = new LinkedList<>();
 
         List<Integer> path = new ArrayList<>();
@@ -157,6 +157,7 @@ public class Main {
 
             if (last == dst) {
                 printPath(path);
+                return path;
             }
 
             List<Integer> lastNode = map.get(last);
@@ -168,9 +169,8 @@ public class Main {
                 }
             }
         }
-        return path;
+        return null;
     }
-
 
     private static void printPath(List<Integer> path) {
         int size = path.size();
