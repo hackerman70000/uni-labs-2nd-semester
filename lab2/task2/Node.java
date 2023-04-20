@@ -7,6 +7,7 @@ public class Node {
     Map<Character, Node> children;
     boolean ifEnd;
 
+
     public Node() {
         children = new HashMap<>();
         ifEnd = false;
@@ -26,5 +27,6 @@ public class Node {
         }
         current.ifEnd = true;
     }
+
 }
 
