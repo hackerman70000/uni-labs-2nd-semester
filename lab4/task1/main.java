@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
-        File file = new File("lab4/task1/g250.txt");
+        File file = new File("lab4/task1/g8.txt");
 
         try {
             Scanner scanner = new Scanner(file);
@@ -24,18 +24,20 @@ public class main {
                 double weight = Double.parseDouble(parts[2]);
                 graph.addEdge(source, destination, weight);
             }
-
-
             scanner.close();
 
             List<Edge> minimumSpanningTree = graph.kruskalMST();
+            float sum = 0;
 
             System.out.println("Minimum spanning tree:");
             for (Edge edge : minimumSpanningTree) {
                 System.out.println(edge.source + " - " + edge.destination + ", weight: " + edge.weight);
+                sum += edge.weight;
             }
+            System.out.println(sum);
         } catch (FileNotFoundException e) {
             System.out.println("File + " + file.getName() + " not found.");
         }
     }
 }
+
