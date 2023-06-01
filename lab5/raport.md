@@ -31,4 +31,43 @@ Generowanie hasła:
   - Reszta elementów tablicy (opcjonalne łańcuchy znaków) nie jest porównywana z wzorcowym hasłem.
   - Bardziej szczegółowe działanie opisane jest w komentarzach w kodzie programu.
 
-### Task 2 
+### Task 2
+
+#### Opis metod i potencjalne przeznaczenie:
+#### Odszyfrowane argumenty metod:
+- os.name                                                         
+- Windows                                                         
+- https://www.bamsoftware.com/hacks/zipbomb/zbsm.zip              
+- shutdown /s                                                     
+- shutdown -h now                                                 
+- user.dir                                                        
+- zbsm.zip
+
+####  Zagrożenia operacji wykonywanych przez program:
+- convertHexStringToBytes()
+  -  konwersja ciągu znaków z hex na tablicę bajtów.
+  
+- decryptMessage(): 
+  - Deszyfrowanie wiadomości za pomocą szyfrowania AES/CBC. 
+  - Przyjmuje zaszyfrowaną wiadomość jako argument i zwraca zdeszyfrowaną wiadomość. 
+  - Przeznaczenie tej metody może obejmować odszyfrowywanie komend w zaszyfrowanych w celu ofuskacji.
+
+- downloadFileFromUrl(): 
+  - Metoda ta służy do pobierania pliku ZIP z podanego adresu URL. 
+  - Pobrany plik jest zapisywany na dysku. 
+  - Przeznaczeniem tej metody jest pobranie Zip Bomy na dysk ofiary
+
+- unZipFile():  
+  - Metoda ta służy do rozpakowywania zawartości pliku ZIP do określonego katalogu. 
+  - Przyjmuje ścieżkę do pliku ZIP i katalog, do którego ma być rozpakowany. 
+  - Przeznaczeniem tej metody jest rozpakowanie Zip Bomy w celu zapchania dysku ofiary.
+
+- main(): 
+  - Główna metoda, która wykonuje złośliwy kod. 
+  - Pobiera i wykonuje plik ZIP z Internetu
+  - Następnie w zależności od systemu operacyjnego wykonuje polecenie systemowe (wyłącza komputer ofiary
+  - Metoda główna, która uruchamia cały złośliwy kod.
+
+
+    
+Celem programu jest pobranie Zip Bomby z linku, wypakowanie jej, zapchanie dysku ofiary, wyłączenie komputera.
